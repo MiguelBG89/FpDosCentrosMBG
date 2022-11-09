@@ -1,0 +1,24 @@
+{
+  "proyectos": [
+    {
+      "participantes": [
+        "Alvaro"
+      ],
+      "tags": [
+        "Informatica"
+      ],
+      "familias": [
+        "Informatica"
+      ],
+      "titulo": "1",
+      "descripcion": "Prueba del proyecto",
+      "coordinador": "Jorge",
+      "valoracion": {
+        "comentario": "es una mierda",
+        "puntuacion": 4.21
+      },
+      "estado": true,
+      "visibilidad": true
+    }
+  ]
+}

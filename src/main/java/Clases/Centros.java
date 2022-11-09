@@ -6,17 +6,17 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name="centro")
-@XmlType(propOrder= {"nombre","proyecto","web","contacto","profesor","familia_Profesional","alumno"})
+@XmlType(propOrder= {"nombre","proyectos","web","contacto","profesor","familia_Profesional","alumno"})
 
 public class Centros {
 
     private String nombre, web, familia_Profesional;
     private int contacto;
-    private Proyectos proyecto;
+    private listaProyectos proyectos;
     private Profesores profesores;
     private Alumnos alumno;
 
-    public Centros(String nombre, String web, String familia_Profesional, int contacto, Proyectos proyecto, Profesores profesores,
+    public Centros(String nombre, String web, String familia_Profesional, int contacto, listaProyectos proyecto, Profesores profesores,
                    Alumnos alumno) {
         super();
         this.nombre = nombre;
@@ -25,7 +25,7 @@ public class Centros {
         this.contacto = contacto;
         this.profesores = profesores;
         this.alumno = alumno;
-        this.proyecto = proyecto;
+        this.proyectos = proyecto;
     }
 
     public Centros() {
@@ -40,13 +40,13 @@ public class Centros {
         this.nombre = nombre;
     }
 
-    @XmlElement(name = "proyecto")
-    public Proyectos getProyecto() {
-        return proyecto;
+    @XmlElement(name = "proyectos")
+    public listaProyectos getProyectos() {
+        return proyectos;
     }
 
-    public void setProyecto(Proyectos proyecto) {
-        this.proyecto = proyecto;
+    public void setlistaProyectos(listaProyectos proyectos) {
+        this.proyectos = proyectos;
     }
 
 
