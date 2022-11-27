@@ -1,57 +1,60 @@
 package com.iessanalberto.MBG;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import com.iessanalberto.MBG.Clases.*;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import Clases.Centros;
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.Unmarshaller;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        //Creamos un archivo que apunta a insti.xml
-        File xmlCentros = new File("src/main/resources/centros.xml");
-        Path archivo = Path.of("target/centros.json");
-        try
-        {
-            //Creamos el contexto para trabajar con nuestra clase Instituto.
-            JAXBContext contexto = JAXBContext.newInstance(Centros.class);
+        //Variables para un proyecto
 
-            //Con el objeto tipo Unmarshaller pasamos de XML a Java.
-            Unmarshaller objetoUnmarshaller = contexto.createUnmarshaller();
-            Centros centro;	//Creamos un objeto tipo Centros.
+        Valoracion valoracion = new Valoracion( "Buen proyecto",8.3);
+        ArrayList<String> participantes= new ArrayList<>(Arrays.asList("Alvaro, Javier, Miguel"));
+        ArrayList<String> tags = new ArrayList<>(Arrays.asList("Java, IntelliJIdea, Archivos"));
+        ArrayList<String> familiaImplicadas = new ArrayList<>(Arrays.asList("DAM, Programacion, Gestion de datos"));
+        String titulo = "FP2 generación de archivos";
+        String descripcion = "Este conjunto de clases permiten generar archivos xml y json";
+        String coordinador = "Miguel";
+        Boolean estado=true;
+        Boolean visibilidad=true;
+        //Datos para un usuario
+        Alumnos alumno= new Alumnos
+                ( "rol1","nombre1", "contraseña","familiaProfesional", "email", new String[]{"gusto1", "gusto12"});
+        alumno.setCentro("centro");
+        List<Usuario> listaUsuarios=new ArrayList<>();
+        listaUsuarios.add(alumno);
+        Usuarios usuarios=new Usuarios();
+        usuarios.setListaUsuarios(listaUsuarios);
 
-            //Pasamos de XML a Java y mostramos por pantalla el contenido de la etiqueta <nombre>.
-            centro = (Centros) objetoUnmarshaller.unmarshal(xmlCentros);
 
-            System.out.println(centro.getNombre());
-            System.out.println("\n" + "\n");
 
-            //Pasamos de objeto a archivo .json
+        //Creacion del proyecto
+        Proyecto proyecto = new Proyecto( participantes, tags, familiaImplicadas, titulo, descripcion, coordinador, valoracion,  estado,  visibilidad);
 
-            GsonBuilder builder = new GsonBuilder();
+        //Se crea el proyecto y se añade a la lista de proyectos
+        ListaProyectos listaProyectos=new ListaProyectos();
+        listaProyectos.addProyectos(proyecto);
 
-            Gson gson = builder.setPrettyPrinting().create();
+        Profesor profesor= new Profesor
+                ( "rol1","nombre1", "contraseña","familiaProfesional", "email", new String[]{"gusto1", "gusto12"});
+        alumno.setCentro("centro");
 
-            String texto = gson.toJson(centro);
+        Centros centro = new Centros("IES San Alberto", "a", "Informatica", 1, listaProyectos, profesor,
+                 alumno);
+        //Utilizamos el metodo generarXML con la lista de proyectos para generar el XML
+        generarXML estructuraDatosXml = new generarXML();
+        estructuraDatosXml.setListaProyectos(listaProyectos);
+        estructuraDatosXml.setUsuarios(usuarios);
+        estructuraDatosXml.setCentros(centro);
+        estructuraDatosXml.generar();
+        generarJson generarJson=new generarJson();
+        generarJson.generar();
 
-            Files.writeString(archivo, texto);
-
-        } catch (JAXBException e)
-        {
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        //Otro constructor que permite generar un XML y JSON a la vez
+        /*GenerarJson generarJson=new GenerarJson(estructuraDatosXml);
+        generarJson.generar();*/
 
     }
 }

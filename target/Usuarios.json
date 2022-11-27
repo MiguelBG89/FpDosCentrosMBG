@@ -1,0 +1,15 @@
+{
+  "listaUsuarios": [
+    {
+      "rol": "rol1",
+      "nombre": "nombre1",
+      "contraseña": "contraseña",
+      "familiaProfesional": "familiaProfesional",
+      "email": "email",
+      "gustos": [
+        "gusto1",
+        "gusto12"
+      ]
+    }
+  ]
+}

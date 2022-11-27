@@ -1,4 +1,4 @@
-package Clases;
+package com.iessanalberto.MBG.Clases;
 
 import jakarta.xml.bind.annotation.*;
 
