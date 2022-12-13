@@ -1,31 +1,52 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <centro>
     <nombre>IES San Alberto</nombre>
     <proyectos>
-        <proyectos>
-            <titulo>1</titulo>
+        <proyecto>
+            <titulo>FP2 generación de archivos</titulo>
             <participantes>
-                <participante>Alvaro</participante>
+                <participante>Alvaro, Javier, Miguel</participante>
             </participantes>
             <tags>
-                <tag>Informatica</tag>
+                <tag>Java, IntelliJIdea, Archivos</tag>
             </tags>
             <familias>
-                <familia>Informatica</familia>
+                <familia>DAM, Programacion, Gestion de datos</familia>
             </familias>
-            <descripcion>Prueba del proyecto</descripcion>
-            <coordinador>Jorge</coordinador>
+            <descripcion>Este conjunto de clases permiten generar archivos xml y json</descripcion>
+            <coordinador>Miguel</coordinador>
             <valoracion>
-                <comentario>es una mierda</comentario>
-                <puntuacion>4.21</puntuacion>
+                <comentario>Buen proyecto</comentario>
+                <puntuacion>8.3</puntuacion>
             </valoracion>
             <estado>true</estado>
             <visibilidad>true</visibilidad>
-        </proyectos>
+        </proyecto>
     </proyectos>
     <web>a</web>
-    <contacto>i</contacto>
-    <profesor>a</profesor>
-    <familiaProf>a</familiaProf>
-    <alumno>a</alumno>
+    <contacto>1</contacto>
+    <profesor>
+        <rol>rol1</rol>
+        <nombre>nombre1</nombre>
+        <contraseña>contraseña</contraseña>
+        <familiaProfesional>familiaProfesional</familiaProfesional>
+        <email>email</email>
+        <gustos>
+            <gusto>gusto1</gusto>
+            <gusto>gusto12</gusto>
+        </gustos>
+    </profesor>
+    <familia_Profesional>Informatica</familia_Profesional>
+    <alumno>
+        <rol>rol1</rol>
+        <nombre>nombre1</nombre>
+        <contraseña>contraseña</contraseña>
+        <familiaProfesional>familiaProfesional</familiaProfesional>
+        <email>email</email>
+        <gustos>
+            <gusto>gusto1</gusto>
+            <gusto>gusto12</gusto>
+        </gustos>
+        <centro>centro</centro>
+    </alumno>
 </centro>

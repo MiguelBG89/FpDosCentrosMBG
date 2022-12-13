@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<centro>
+    <nombre>IES San Alberto</nombre>
+    <proyectos>
+        <proyectos>
+            <titulo>1</titulo>
+            <participantes>
+                <participante>Alvaro</participante>
+            </participantes>
+            <tags>
+                <tag>Informatica</tag>
+            </tags>
+            <familias>
+                <familia>Informatica</familia>
+            </familias>
+            <descripcion>Prueba del proyecto</descripcion>
+            <coordinador>Jorge</coordinador>
+            <valoracion>
+                <comentario>es una mierda</comentario>
+                <puntuacion>4.21</puntuacion>
+            </valoracion>
+            <estado>true</estado>
+            <visibilidad>true</visibilidad>
+        </proyectos>
+    </proyectos>
+    <web>a</web>
+    <contacto>i</contacto>
+    <profesor>a</profesor>
+    <familiaProf>a</familiaProf>
+    <alumno>a</alumno>
+</centro>

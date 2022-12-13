@@ -1,4 +1,4 @@
-package Clases;
+package com.iessanalberto.MBG.Clases;
 
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlElementWrapper;
@@ -12,18 +12,18 @@ public class Centros {
 
     private String nombre, web, familia_Profesional;
     private int contacto;
-    private listaProyectos proyectos;
-    private Profesores profesores;
+    private ListaProyectos proyectos;
+    private Profesor profesor;
     private Alumnos alumno;
 
-    public Centros(String nombre, String web, String familia_Profesional, int contacto, listaProyectos proyecto, Profesores profesores,
+    public Centros(String nombre, String web, String familia_Profesional, int contacto, ListaProyectos proyecto, Profesor profesor,
                    Alumnos alumno) {
         super();
         this.nombre = nombre;
         this.web = web;
         this.familia_Profesional = familia_Profesional;
         this.contacto = contacto;
-        this.profesores = profesores;
+        this.profesor = profesor;
         this.alumno = alumno;
         this.proyectos = proyecto;
     }
@@ -40,12 +40,13 @@ public class Centros {
         this.nombre = nombre;
     }
 
+
     @XmlElement(name = "proyectos")
-    public listaProyectos getProyectos() {
+    public ListaProyectos getProyectos() {
         return proyectos;
     }
 
-    public void setlistaProyectos(listaProyectos proyectos) {
+    public void setlistaProyectos(ListaProyectos proyectos) {
         this.proyectos = proyectos;
     }
 
@@ -70,12 +71,12 @@ public class Centros {
     }
 
     @XmlElement(name = "profesor")
-    public Profesores getProfesor() {
-        return profesores;
+    public Profesor getProfesor() {
+        return profesor;
     }
 
-    public void setProfesor(Profesores profesores) {
-        this.profesores = profesores;
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
     }
 
     @XmlElement(name = "familia_Profesional")
